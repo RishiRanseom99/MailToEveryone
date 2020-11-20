@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <style>
+            .mail_app{
+                
+                margin: 30vh 35vw;
+            }
+            </style>
+    </head>
+
+    <body>
+        <div class="mail_app">
+        <h1>Hello mail service </h1>
+        
+        <form > 
+            <select class="groups"></select>
+            <button id="submit" type="submit" value="Send Email"  >Send Emails</button> 
+          </form> 
+          <br>
+          <br>
+          <h2>Add your mail to a respective group</h2>
+          <h5>Only for testing this is allowed</h5>
+          <form > 
+              <input id="mail" type="text" />
+            <select class="groups" id="selectMail"></select>
+            <button id="addmail" type="submit" value="add mail"  >add email</button> 
+          </form> 
+        <script defer src="main.js"></script>
+        </div>
+    </body>
+</html>
