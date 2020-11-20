@@ -9,7 +9,7 @@ const select=document.getElementsByClassName('groups');
     //let select=document.getElementById('groups');
     groupList.forEach(data=>{
     
-    console.log(select.length);
+    // console.log(select.length);
     for(var i=0;i<select.length;i++)
     {
       var option = document.createElement("option");
@@ -45,17 +45,25 @@ const select=document.getElementsByClassName('groups');
 
  document.getElementById("submit").addEventListener("click", async function(event){
     event.preventDefault(); 
+    const text=document.getElementById("textspace").value;
     const optionValue=select[1].value;
     const options={
       method:'POST',
       headers:{
           'Content-Type':'application/json'
       },
-      body:JSON.stringify({optionValue})
+      body:JSON.stringify({optionValue,text})
       };
       const response=await fetch('/api',options);
       const json=await response.json();
-      console.log(json);
-
-
+      if(response)
+      {
+        document.getElementById('confirmationMsg').style.visibility = "visible"; 
+        console.log(json);
+        document.getElementById("textspace").value="Enter your message here"
+      }
+      else
+      {
+        document.getElementById('confirmationMsh').value="Not Sent";
+      }
   });

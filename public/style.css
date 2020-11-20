@@ -23,3 +23,12 @@ select{
 input{
     font-size: large;
 }
+#textspace{
+    resize: none;
+}
+#confirmationMsg{
+    font-size: 3vmin;
+    font-weight: 20;
+    color: rgb(11, 113, 247);
+    visibility: "hidden";
+}
