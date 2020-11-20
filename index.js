@@ -46,10 +46,11 @@ async function main()
 
 
   //to handle all request made to send a mail to all email id's of a passed group
-    let option;
+    let option,mailtext;
     app.post('/api',async(request,response)=>{
       console.log('i got a option');
        option=request.body.optionValue;
+       mailtext=request.body.text;
      // console.log("option selected"+option);
       response.json({status:"ok got ur data option"});
 
@@ -75,7 +76,7 @@ async function main()
         from: 'interntaskmails@gmail.com',
         to: mails,
         subject: 'Sending Email for checking',
-        text: 'All your group member have been informed......'
+        text: mailtext
       };
       transporter.sendMail(mailOptions, function(error, info){
         if (error) {
